@@ -1,0 +1,62 @@
+// Problem 1: Given an unsorted array of numbers and a target ‘key’, remove all instances of ‘key’ in-place and return the new length of the array.
+
+// --- Example 1:
+// Input: [3, 2, 3, 6, 3, 10, 9, 3], Key=3
+// Output: 4
+// Explanation: The first four elements after removing every 'Key' will be [2, 6, 10, 9].
+
+// --- Example 2:
+// Input: [2, 11, 2, 2, 1], Key=2
+// Output: 2
+// Explanation: The first two elements after removing every 'Key' will be [11, 1].
+
+// -----OICE
+// O: number of new length of the array
+// I: array of numbers
+// C: O(1) Space
+//    in place
+// E: Empty array
+
+// Time complexity O(n)
+// Space complexity O(n)
+function remove_element_1(arr, k) {
+    return arr.filter(val => val !== k).length;
+}
+
+
+// Time complexity O(n)
+// Space Complexity O(1)
+function remove_element_2(arr, k) {
+    let next = 0 // Next place where I can replace the value different than k
+
+    for( let i = 0; i < arr.length; i++ ) {
+        if(arr[i] !== k) {
+            arr[next] = arr[i];
+            next++
+        }
+    }
+
+    return next;
+}
+
+
+// Time complexity O(n)
+// Space Complexity O(1)
+function remove_element_educative(arr, key) {
+    let nextElement = 0;
+
+    for( i = 0; i < arr.length; i++ ) {
+        if(arr[i] !== key) {
+            arr[nextElement] = arr[i];
+            nextElement += 1;
+        }
+    }
+
+    return nextElement;
+}
+
+module.exports = {
+    remove_element_1,
+    remove_element_2,
+    remove_element_educative
+};
