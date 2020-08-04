@@ -1,5 +1,13 @@
 {
+  "name": "GCI_Patterns",
+  "version": "1.0.0",
+  "main": "index.js",
+  "author": "alan-serrano <alan.serrano.pch@gmail.com>",
+  "license": "MIT",
   "devDependencies": {
+    "@babel/core": "^7.11.0",
+    "@babel/preset-env": "^7.11.0",
+    "babel-jest": "^26.2.2",
     "jest": "^26.2.2"
   }
 }
