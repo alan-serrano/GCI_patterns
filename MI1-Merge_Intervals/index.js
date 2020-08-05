@@ -50,5 +50,5 @@ function merge(intervals) {
     return merged;
 }
 
-module.exports.tests = merge
-module.exports.Interval = Interval;
+export {Interval}
+export default merge;

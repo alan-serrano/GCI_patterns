@@ -29,4 +29,4 @@ function pair_with_targetsum(arr, target_sum) {
     return [-1, -1]
 }
 
-module.exports = pair_with_targetsum;
+export default pair_with_targetsum;

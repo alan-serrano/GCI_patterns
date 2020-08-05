@@ -66,7 +66,7 @@ function remove_duplicates_educative(arr) {
     return arr;
 }
 
-module.exports = {
+export default {
     remove_duplicates_1,
     remove_duplicates_2,
     remove_duplicates_educative

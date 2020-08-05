@@ -45,7 +45,7 @@ function remove_element_2(arr, k) {
 function remove_element_educative(arr, key) {
     let nextElement = 0;
 
-    for( i = 0; i < arr.length; i++ ) {
+    for( let i = 0; i < arr.length; i++ ) {
         if(arr[i] !== key) {
             arr[nextElement] = arr[i];
             nextElement += 1;
@@ -55,7 +55,7 @@ function remove_element_educative(arr, key) {
     return nextElement;
 }
 
-module.exports = {
+export default {
     remove_element_1,
     remove_element_2,
     remove_element_educative

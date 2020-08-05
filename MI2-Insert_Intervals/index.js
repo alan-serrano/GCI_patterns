@@ -53,5 +53,5 @@ function insert(intervals, newInterval) {
     return inserted;
 }
 
-module.exports.tests = insert;
-module.exports.Interval = Interval;
+export {Interval}
+export default insert;

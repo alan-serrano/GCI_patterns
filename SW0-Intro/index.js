@@ -54,7 +54,7 @@ function findAverageOfSubarrays_2(k, arr) {
     return averages;
 }
 
-module.exports.tests = {
+export default {
     findAverageOfSubarrays,
     findAverageOfSubarrays_2
 };

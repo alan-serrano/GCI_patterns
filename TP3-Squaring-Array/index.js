@@ -24,7 +24,7 @@ function make_squares(arr) {
     const result = new Array(arr.length);
 
     for(let i = arr.length - 1; i >= 0; i--) {
-        leftSquare = arr[left]**2;
+        const leftSquare = arr[left]**2,
         rightSquare = arr[right]**2;
 
         if( leftSquare > rightSquare ) {
@@ -67,7 +67,7 @@ function make_squares_educative(arr) {
     return squares;
 }
 
-module.exports = {
+export default {
     make_squares,
     make_squares_educative
 }

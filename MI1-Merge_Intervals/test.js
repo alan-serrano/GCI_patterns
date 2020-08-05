@@ -1,4 +1,4 @@
-const {tests: functions, Interval} = require('./index');
+import tests, {Interval} from './index'
 
 test(`Interval Class exists`, () => {
     expect(typeof Interval).toBe('function');
@@ -12,13 +12,13 @@ test(`Interval is created`, () => {
 
 
 test(`Function exists`, () => {
-    if(typeof functions === 'function') {
-        expect(typeof functions).toBe('function');
+    if(typeof tests === 'function') {
+        expect(typeof tests).toBe('function');
     } else {
-        expect(Object.keys(functions).length > 0).toBe(true);
+        expect(Object.keys(tests).length > 0).toBe(true);
 
-        if(Object.keys(functions)>0) {
-            for (const fn of Object.values(functions)) {
+        if(Object.keys(tests)>0) {
+            for (const fn of Object.values(tests)) {
                 expect(typeof fn).toBe('function');
             }
         }
@@ -26,18 +26,18 @@ test(`Function exists`, () => {
     
 });
 
-if(typeof functions === 'function') {
-    tester(functions);
+if(typeof tests === 'function') {
+    tester(tests);
 }
 
-for (const name in functions) {
-    tester(functions[name], `${name}: `)
+for (const name in tests) {
+    tester(tests[name], `${name}: `)
 }
 
 
-function tester(fn, title='') {
+function tester(functionToTest, title='') {
     test(`${title}Intervals are merged`, () => {
-        expect(fn([
+        expect(functionToTest([
             new Interval(1, 4),
             new Interval(2, 5), 
             new Interval(7, 9)
@@ -46,7 +46,7 @@ function tester(fn, title='') {
             new Interval(7, 9)
         ]);
 
-        expect(fn([
+        expect(functionToTest([
             new Interval(6, 7),
             new Interval(2, 4),
             new Interval(5, 9)
@@ -55,7 +55,7 @@ function tester(fn, title='') {
             new Interval(5, 9)
         ]);
 
-        expect(fn([
+        expect(functionToTest([
             new Interval(1, 4),
             new Interval(2, 6),
             new Interval(3, 5)
@@ -63,7 +63,7 @@ function tester(fn, title='') {
             new Interval(1, 6)
         ]);
 
-        expect(fn([
+        expect(functionToTest([
             new Interval(1, 4),
             new Interval(4, 6),
             new Interval(8, 10)

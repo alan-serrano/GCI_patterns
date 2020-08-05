@@ -53,7 +53,7 @@ function max_sub_array_of_size_k_2(k, arr) {
     return maxSum;
 }
 
-module.exports.tests = {
+export default {
     max_sub_array_of_size_k,
     max_sub_array_of_size_k_2,
 };

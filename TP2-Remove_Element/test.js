@@ -1,28 +1,35 @@
-const functions = require('./index');
+import tests from './index';
 
-test(`${name}: Function exists`, () => {
-    expect(Object.values(functions).length > 0).toBe(true);
-    
-    if(Object.values(functions)>0) {
-        for (const fn of Object.values(functions)) {
-            expect(typeof fn).toBe('function');
+test(`Function exists`, () => {
+    if(typeof tests === 'function') {
+        expect(typeof tests).toBe('function');
+    } else {
+        expect(Object.keys(tests).length > 0).toBe(true);
+
+        if(Object.keys(tests)>0) {
+            for (const fn of Object.values(tests)) {
+                expect(typeof fn).toBe('function');
+            }
         }
     }
 });
 
-for (const name in functions) {
-    tester(functions[name], name)
+if(typeof tests === 'function') {
+    tester(tests);
 }
 
+for (const name in tests) {
+    tester(tests[name], `${name}: `)
+}
 
-function tester(fn, name) {
-    test(`${name}: Array contains the key value`, () => {
-        expect(fn([3, 2, 3, 6, 3, 10, 9, 3],3)).toEqual(4);
-        expect(fn([2, 11, 2, 2, 1], 2)).toEqual(2);
+function tester(functionToTest, title) {
+    test(`${title}: Array contains the key value`, () => {
+        expect(functionToTest([3, 2, 3, 6, 3, 10, 9, 3],3)).toEqual(4);
+        expect(functionToTest([2, 11, 2, 2, 1], 2)).toEqual(2);
     });
     
-    test(`${name}: Empty array`, () => {
-        expect(fn([],3)).toEqual(0);
-        expect(fn([],1)).toEqual(0);
+    test(`${title}: Empty array`, () => {
+        expect(functionToTest([],3)).toEqual(0);
+        expect(functionToTest([],1)).toEqual(0);
     });
 }

@@ -55,7 +55,7 @@ function smallest_sub_array_with_given_sum2(s, arr) {
     return smallestLength || 0;
 }
 
-module.exports.tests = {
+export default {
     smallest_sub_array_with_given_sum,
     smallest_sub_array_with_given_sum2
 };
