@@ -1,6 +1,5 @@
 import tests from './index';
 
-console.log(tests)
 test(`Function exists`, () => {
     if(typeof tests === 'function') {
         expect(typeof tests).toBe('function');
